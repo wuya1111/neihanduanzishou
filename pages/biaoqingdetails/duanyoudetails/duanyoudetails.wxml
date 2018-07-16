@@ -1,0 +1,18 @@
+<view class='header'>
+
+</view>
+<view class='select'>
+
+  <block wx:for="{{detailslist}}" wx:for-item="item" wx:for-index="idx">
+    <view >
+      <image lazy-load='false' class='iamgessize' bindtap='imageOnclick' data-id='{{item.imgUrl}}' src="{{item.imgUrl}}"></image>
+    </view>
+  </block>
+</view>
+<view class="fx-zx">
+  <button open-type='share'>
+    <image src='../../images/iv_share_square.png'></image>
+  </button>
+</view>
+<image src='../../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image>
+<image src='../../images/shouye_1.png' bindtap='homeOnclick' class='colortext2'></image>

@@ -1,0 +1,12 @@
+<block wx:for="{{list}}" wx:for-item="item">
+  <view class="btn" bindtap='itemOnclick' data-id='{{item}}'>
+    <!-- <view class='btn-img'>
+      <image src="{{item.img}}"></image>
+    </view> -->
+
+    <image lazy-load='false' class='btnimg' src="{{item.img}}" mode="widthFix"></image>
+    <view class="btn-r">
+      <view class="name-r">{{item.title}}</view>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,67 @@
+<view class='page_row '>
+  <view class="search">
+    <view class="df search_arr">
+      <icon class="searchcion" size='20' type='search'></icon>
+      <input class="" bindinput="searchValueInput" placeholder="请输入搜索表情" value="{{searchValue}}" />
+    </view>
+  </view>
+  <view class='sousuo' bindtap="suosou">搜索</view>
+</view>
+
+<view class="content">
+  <view class='header border'>
+    <view class='header-l'>热门</view>
+    <view class='header-r' bindtap='rmckqb'>查看全部></view>
+  </view>
+
+  <scroll-view scroll-x="ture" class="swiper-tab " >
+
+    <block wx:for="{{rmlist}}" wx:for-item="item" wx:for-index="idx">
+
+
+      <view class="image-h">
+        <image wx:if="{{idx<rmlist.length-1}}" lazy-load='false' src="{{item.material.fcover}}" bindtap='rmimonclick' data-id='{{item.material}}'></image>
+        <image wx:elif="{{idx==rmlist.length-1}}" lazy-load='false' class='iamgessize' src="{{item.material.fcover}}" bindtap='rmckqb'></image>
+        <view class="image_name long">{{item.material.tag_name}}</view>
+      </view>
+
+    </block>
+  </scroll-view>
+
+  <view class='header border'>
+    <view class='header-l'>段友表情包</view>
+    <view bindtap='dyckqb' class='header-r'>查看全部></view>
+  </view>
+  <view class='select'>
+
+    <block wx:for="{{dylist}}" wx:for-item="item" wx:for-index="idx">
+      <view bindtap='dyimonclick' class='flex' data-id='{{item}}'>
+        <block wx:for="{{item.emoticonList}}" wx:for-item="items" wx:for-index="idxs">
+          <view class="img-btn">
+            <view wx:if="{{item.emoticonList.length-1==idxs}}" class='iamgessize2' style='font-size:1rem'>
+              <text class='textconte'> +{{item.emoticonNum
+}}张</text>
+            </view>
+            <view>
+              <image lazy-load='false' src="{{items.imgUrl}}"></image>
+            </view>
+          </view>
+
+        </block>
+      </view>
+    </block>
+  </view>
+
+  <view class='header border'>
+    <view class='header-l'>大家正在使用</view>
+
+  </view>
+  <view class='select  flex'>
+    <block wx:for="{{zzlist}}" wx:for-item="item" wx:for-index="idx">
+      <image lazy-load='false' class='iamgessize' bindtap='imageOnclick' data-id='{{item.fgif_thumb}}' src="{{item.fgif_thumb}}"></image>
+    </block>
+  </view>
+
+</view>
+
+<image src='../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image>

@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/jokes/jokes",
+    "pages/graphic/graphic",
+    "pages/logs/logs",
+    "pages/animationdetails/animationdetails",
+    "pages/indexdetails/indexdetails",
+    "pages/biaoqing/biaoqing",
+    "pages/newbiaoqing/newbiaoqing",
+    "pages/searchbiaoqing/searchbiaoqing",
+    "pages/animation/animation",
+    "pages/biaoqingdetails/duanyoubiaoqing/duanyoubiaoqing",
+    "pages/biaoqingdetails/duanyoudetails/duanyoudetails",
+    "pages/biaoqingdetails/remenbiaoqingbao/remenbiaoqingbao"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "搞笑段子",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#ffc107",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/images/shouye.png",
+        "selectedIconPath": "pages/images/shouye_1.png"
+      },
+      {
+        "text": "段子",
+        "pagePath": "pages/jokes/jokes",
+        "iconPath": "pages/images/expression.png",
+        "selectedIconPath": "pages/images/mexpression1.png"
+      },
+      
+    
+      {
+        "text": "表情",
+        "pagePath": "pages/newbiaoqing/newbiaoqing",
+        "iconPath": "pages/images/jokes.png",
+        "selectedIconPath": "pages/images/jokes1.png"
+      },
+      {
+        "text": "藏头诗",
+        "pagePath": "pages/graphic/graphic",
+        "iconPath": "pages/images/verse.png",
+        "selectedIconPath": "pages/images/verse1.png"
+      }
+    ]
+  }
+}

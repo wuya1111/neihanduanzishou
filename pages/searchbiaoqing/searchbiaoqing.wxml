@@ -1,0 +1,22 @@
+<view class='page_row '>
+  <view class="search">
+    <view class="df search_arr">
+      <icon class="searchcion" size='20' type='search'></icon>
+      <input class="" bindinput="searchValueInput" placeholder="请输入搜索表情" value="{{searchValue}}" />
+    </view>
+  </view>
+  <view class='sousuo' bindtap="suosou">搜索</view>
+</view>
+
+<view class="class_img">
+    <block  wx:for="{{list}}" wx:for-item="item" >
+       <view class="img-btn">
+            <image src="{{item.image_url}}" bindtap="buttonClick" data-id='{{item}}'>
+            </image>
+       </view>
+         
+    </block>  
+</view>
+
+
+ <image src='../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image>

@@ -1,0 +1,51 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.colortext {
+  height: 90rpx;
+  width: 90rpx;
+  position: fixed;
+  bottom: 25rpx;
+  right: 10rpx;
+  margin: auto;
+}
+
+.colortext2 {
+  height: 90rpx;
+  width: 90rpx;
+  position: fixed;
+  bottom: 230rpx;
+  right: 20rpx;
+  margin: auto;
+}
+
+.fx-zx {
+  height: 90rpx;
+  width: 90rpx;
+  position: fixed;
+  bottom: 110rpx;
+  right: 20rpx;
+  margin: auto;
+}
+
+.fx-zx button {
+  width: 58rpx;
+  height: 58rpx;
+  border: none;
+  padding: 0;
+  background: #fff;
+}
+
+.fx-zx image {
+  width: 58rpx;
+  height: 58rpx;
+}

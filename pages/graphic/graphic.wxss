@@ -1,0 +1,124 @@
+.btn {
+  border-bottom: 1pt solid #eee;
+  padding: 20rpx 25rpx;
+}
+
+.btn .btn-img {
+  border-radius: 10rpx;
+  overflow: hidden;
+  width: 100%;
+  height: 400rpx;
+}
+
+.blockview {
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+input {
+  -webkit-appearance: textfield;
+  background-color: white;
+  -webkit-rtl-ordering: logical;
+  user-select: text;
+  cursor: auto;
+  padding: 1px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: initial;
+  border-image: initial;
+}
+
+.input-wrapper {
+  border-width: 5px;
+  border-style: solid;
+  border-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10rpx;
+  display: block;
+  position: relative;
+}
+
+.radio_groupclss {
+  margin-top: 20rpx;
+}
+
+.radio_groupview {
+  margin-top: 40rpx;
+}
+
+.btnimg {
+  width: 100%;
+}
+
+.btn-r {
+  -webkit-box-flex: 1;
+  margin-left: 28rpx;
+  position: relative;
+}
+
+.name-r {
+  color: #333;
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.color {
+  color: #878787;
+  font-size: 12px;
+}
+
+.font_l, .font_r {
+  height: 35rpx;
+  line-height: 35rpx;
+}
+
+.intro-r {
+  height: 70rpx;
+  overflow: hidden;
+  line-height: 35rpx;
+  text-overflow: ellipsis;
+}
+
+.btn-p {
+  position: absolute;
+  font-size: 12px;
+  top: 50%;
+  margin-top: -22rpx;
+  right: 0;
+  width: 132rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  color: #1e1e1e;
+  background: #ebfaff;
+  text-align: center;
+  border: 2px solid #56d3ff;
+  border-radius: 5rpx;
+}
+
+.laod_image {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+
+.laod_image > view {
+  height: 50rpx;
+  width: 50rpx;
+  overflow: hideen;
+}
+
+.texts {
+  display: block;
+  padding-left: 15rpx;
+}
+
+.load {
+  color: gray;
+  font-size: 12px;
+}

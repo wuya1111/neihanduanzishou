@@ -1,0 +1,42 @@
+<view class="btn">
+  <!-- <view class='btn-img'> -->
+  <view>包含名字</view>
+
+  <view class='input-wrapper'>
+    <input type="text" name="fname" bindinput="userNameInput" />
+  </view>
+
+  <view class='radio_groupview'>选择位置</view>
+  <view class='radio_groupclss'>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+
+
+  <view class='radio_groupview'>押韵</view>
+  <view class='radio_groupclss'>
+    <radio-group class="radio-group" bindchange="radioChange2">
+      <label class="radio" wx:for="{{yitems}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </radio-group>
+
+
+  </view>
+
+  <button class='radio_groupview' bindtap="buttons">生成内涵诗句</button>
+  <view class='blockview'>
+    <!-- <block wx:for="{{list}}" wx:for-item="item" wx:for-index="idx">
+      <view>{{item}}</view>
+    </block> -->
+    <text class='texts' selectable="true">{{list}}</text>
+    <view class="tblin_items_btn.radio_groupview" bindtap="copyTBL">一键复制</view><!-- 复制操作 -->  
+  </view>
+
+
+</view>
+
+ <image src='../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image>

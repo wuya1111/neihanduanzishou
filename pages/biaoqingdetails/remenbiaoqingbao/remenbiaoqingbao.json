@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "热门表情包",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#f8f8f9",
+  "backgroundTextStyle": "dark"
+}

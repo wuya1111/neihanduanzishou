@@ -1,0 +1,16 @@
+<block wx:for="{{list}}" wx:for-item="item">
+  <view  class="btn" bindtap='itemOnclick' data-id='{{item}}' >
+    <view  class='btn_name_head'>
+      <image lazy-load='false' class='btn_head' src="{{item.profile_image}}"></image>
+      <view class="name_h">{{item.name}}</view>
+    </view>
+    <view >
+      <view class="name-r">{{item.title}}</view>
+       <text  selectable="true">{{item.text}}</text>
+    </view>
+    </view>
+
+ 
+</block>
+
+ <image src='../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image>

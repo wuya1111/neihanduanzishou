@@ -1,0 +1,73 @@
+/**index.wxss**/
+
+.content {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  padding: 24rpx 3%;
+  border-bottom: 0px solid #999;
+  overflow: hidden;
+}
+
+.header >view {
+  font-size: 24rpx;
+  border: 0px solid #999;
+  padding: 7rpx 10rpx;
+}
+
+.header-l {
+  float: left;
+}
+
+.header-r {
+  float: right;
+}
+
+.select {
+  padding: 24rpx 3%;
+  border-bottom: 10px solid #d1cdce;
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  -webkit-align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* .select>view{
+  border: 1px solid #333333;
+  width:200rpx;
+  height:230rpx;
+  margin-top:12rpx;
+  text-align:center;
+  line-height: 230rpx 
+} */
+
+.iamgessize {
+  border: 1px solid #999;
+  width: 170rpx;
+  height: 170rpx;
+  margin-top: 12rpx;
+  text-align: center;
+  line-height: 230rpx;
+}
+
+.swiper-tab {
+  white-space: nowrap;
+  width: 100%;
+}
+
+.viewtextclass {
+  text-align: center;
+  font-size: 22rpx;
+  color: #999;
+   text-overflow:ellipsis; 
+    width: 150rpx;
+    white-space: nowrap;
+    overflow:hidden;
+}

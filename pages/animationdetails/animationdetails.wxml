@@ -1,0 +1,21 @@
+<view class="btn-r">
+  <view class="btn">
+    <!-- <view class='btn-img'>
+      <image src="{{item.img}}"></image>
+    </view> -->
+
+    <image lazy-load='false' class='btnimg' src="{{item.img}}" mode="widthFix"></image>
+    <view class="btn-r">
+      <view class="name-r">{{item.title}}</view>
+    </view>
+
+
+    <view class="fx-zx">
+      <button open-type='share'>
+        <image src='../images/iv_share_square.png'></image>
+      </button>
+    </view>
+  </view>
+
+
+</view>
