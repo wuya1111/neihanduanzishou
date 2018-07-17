@@ -1,6 +1,9 @@
 <view class="content">
   <view class='select'>
     <block wx:for="{{dylist}}" wx:for-item="item" wx:for-index="idx">
+
+<view wx:if="{{idx==12}}"><ad unit-id="adunit-644866137e58beee"></ad></view>
+
       <view bindtap='imonclick' data-id='{{item}}' class='flex top'>
         <block wx:for="{{item.emoticonList}}" wx:for-item="items" wx:for-index="idxs">
           <view class="img-btn">

@@ -11,6 +11,7 @@ Page({
     list: [],
     pageInix: 1,
     pagenumberbbb:5,
+    np: 0
   },
 
   /**
@@ -26,7 +27,7 @@ Page({
   onReady: function () {
     
     var i = math.jsmaths(6);
-   console.log(i);
+
    this.pageInix = i;
     this.getRequer(this.pageInix);
   },
@@ -84,75 +85,32 @@ Page({
     var i = math.jsmaths(5);
     console.log(i);
     this.pageInix = i;
+    this.data.np = 0;
     this.getRequer(this.pageInix);
     wx.stopPullDownRefresh();
   },
 
-  // getRequer: function (indx) {
-  //   var timestamp = util.formatTime(new Date);
-  //   var that = this;
-  //   console.log(timestamp)
-  //   var param = {};
-  //   param.showapi_appid = '65900'
-  //   param.showapi_sign = '8aebdd532e2c4c5fb868cce039a906f2'
-  //   param.showapi_timestamp = timestamp
-
-  //   param.showapi_res_gzip = 1
-  //   param.page = indx
-  //   param.maxResult = 20
-
-  //   wx.request({
-  //     url: 'https://route.showapi.com/341-1',
-  //     data: param,
-  //     method: "get",
-  //     success: function (res) {
-  //       console.log(res)
-  //       that.pageInix = that.pageInix + 1;
-  //       var lists = res.data.showapi_res_body.contentlist;
-       
-  //       if (that.list != null) {
-  //         var list = that.list.concat(lists);
-  //       } else {
-  //         var list = lists;
-  //       }
-
-  //       that.list = list;
-
-  //       that.setData({
-  //         list: that.list,
-  //         hasRefesh: lists.length > 0 ? true : false,
-  //         hidden: true
-  //       })
-  //     },
-  //     fail: function () {
-
-  //     }
-  //   })
-  // }
-
+  
 
    getRequer: function (indx) {
     var timestamp = util.formatTime(new Date);
     var that = this;
     console.log(timestamp)
     var param = {};
-    param.showapi_appid = '65900'
-    param.showapi_sign = '8aebdd532e2c4c5fb868cce039a906f2'
-    param.showapi_timestamp = timestamp
-
-    param.showapi_res_gzip = 1
-    param.page = indx
-    param.maxResult = 20
-    param.type = 29
-
+    var urls = 'https://s.budejie.com/topic/list/jingxuan/29/budejie-android-7.0.2/' + this.data.np + '-20.json?market=tencentyingyongbao&udid=352203061660506&appname=baisibudejie&os=4.3&client=android&visiting=&mac=24%3ADB%3AED%3AC0%3A18%3AE3&ver=7.0.2';
+    //  url: 'https://route.showapi.com/255-1',
     wx.request({
-      url: 'https://route.showapi.com/255-1',
+      url: urls,
       data: param,
       method: "get",
       success: function (res) {
         console.log(res)
-        that.pageInix = that.pageInix + 1;
-        var lists = res.data.showapi_res_body.pagebean.contentlist;
+        var rdata = res.data;
+        if (rdata.info.np != null) {
+          that.data.np = rdata.info.np;
+        }
+
+        var lists = res.data.list;
         if (that.list != null) {
           var list = that.list.concat(lists);
         } else {
@@ -177,8 +135,11 @@ Page({
      // var item = event.currentTarget.dataset.id;
      var str = (event.currentTarget.dataset.id);
      let strb = JSON.stringify(str);
-     console.log("---" + str.name);
-     wx.navigateTo({ url: '../indexdetails/indexdetails?jsonStr=' + strb });
+     wx.setStorage({
+       key: "indexdetails",
+       data: str
+     })
+     wx.navigateTo({ url: '../indexdetails/indexdetails'});
    },
 
    dashaOnclick: function (event) {

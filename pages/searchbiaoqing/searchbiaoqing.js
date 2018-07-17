@@ -141,4 +141,26 @@ suosou: function (event) {
   this.data.list=[];
   this.getRequer(this.data.pageInix);
   }  
+  ,
+dashaOnclick: function (event) {
+  console.log('222222222222222222222222222')
+  var current = event.target.dataset.src;
+  wx.navigateToMiniProgram({
+    appId: 'wx18a2ac992306a5a4',
+    path: 'pages/apps/largess/detail?id=OcNrSWjTxb4%3D',
+    extraData: {
+      foo: 'bar'
+    },
+
+    success(res) {
+      // 打开成功
+    }
+  })
+},
+homeOnclick: function (event) {
+  var current = event.target.dataset.src;
+  wx.switchTab({
+    url: '../index/index'
+  })
+},
 })

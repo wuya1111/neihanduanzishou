@@ -1,4 +1,7 @@
 <block wx:for="{{list}}" wx:for-item="item" wx:for-index="idx">
+<view wx:if="{{(idx+1)%7==0}}">
+<ad  unit-id="adunit-ee77aee21dd53f2a"></ad>
+</view>
   <view bindtap='itemOnclick' data-id='{{item}}' class="btn-r">
     <view class='section'>
       <view class='btn_name_head'>
