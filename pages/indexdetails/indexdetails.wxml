@@ -19,7 +19,7 @@
         </view>
         <view wx:elif="{{item.type=='gif'}}">
           <view class='imbtnn' wx:if="{{item.gif.images[0]!=null}}">
-            <image lazy-load='false' class='btnimg' src="{{item.gif.images[0]}}" bindtap='imageOnclick' data-src="{{item.image.big[0]}}" mode="widthFix"></image>
+            <image lazy-load='false' class='btnimg' src="{{item.gif.images[0]}}" bindtap='imageOnclick' data-src="{{item.gif.images[0]}}" mode="widthFix"></image>
           </view>
         </view>
       </view>
