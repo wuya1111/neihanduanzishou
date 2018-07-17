@@ -15,8 +15,10 @@ Page({
     // imageheight: 0,//缩放后的高  
     pagenumber: 400,
     imgalist: ['../images/dashantup.jpg'],
-    np:0
+    np:0,
+    listrefresh:[],
 
+    isRefrensh:false
     
   },
 
@@ -36,6 +38,20 @@ Page({
     // console.log(i);
     // this.data.pageInix = i;
     this.getRequer(this.data.pageInix);
+
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res.model)
+        console.log(res.pixelRatio)
+        console.log(res.windowWidth)
+        console.log(res.windowHeight)
+        console.log(res.language)
+        console.log(res.version)
+        console.log(res.platform)
+        console.log(res.system)
+
+      }
+    })
   },
 
   /**
@@ -104,14 +120,20 @@ Page({
   },
   onPullDownRefresh: function () {
     // 页面相关事件处理函数--监听用户下拉动作
+  
     this.list = null;
     this.imgheightswidth = [];
     var i = math.jsmaths(this.data.pagenumber);
     console.log(i)
     this.data.pageInix = i;
-
+    // listrefresh
     this.data.np=0;
+
+    this.getRequerrefresh();
     this.getRequer(this.data.pageInix);
+
+   
+
     wx.stopPullDownRefresh();
   },
   startPlay: function (e) {
@@ -131,21 +153,55 @@ Page({
     });
 
   },
+  getRequerrefresh: function () {
+   
+    var timestamp = util.formatTime(new Date);
+    var that = this;
+    that.data.pageInix = that.data.pageInix + 1;
+    console.log(timestamp)
+    var param = {}
+    var urls = 'https://d.api.budejie.com/topic/list/chuanyue/10/budejie-android-7.0.2/0-8.json?market=tencentyingyongbao&udid=352203061660506&appname=baisibudejie&os=4.3&client=android&visiting=&mac=24%3ADB%3AED%3AC0%3A18%3AE3&ver=7.0.2';
+    // url: 'https://route.showapi.com/255-1',
+    wx.request({
+      url: urls,
+      data: param,
+      method: "get",
+      success: function (res) {
+        console.log("5555555555555")
+        console.log(res)
+        var rdata = res.data;
+        if (rdata.info.np != null) {
+          that.data.np = rdata.info.np;
+        }
+        var lists = res.data.list;
+        console.log(lists)
+        if (lists != null) {
+         
+          that.data.listrefresh = lists;
+        } else {
+          
+        }
+        that.data.isRefrensh = true;
+        console.log(that.data.listrefresh)
+        that.setData({
+          listrefresh: that.data.listrefresh,
+          isRefrensh: that.data.isRefrensh,
+          hasRefesh: lists.length > 0 ? true : false,
+          hidden: true
+        })
+      },
+      fail: function () {
+
+      }
+    })
+  },
   getRequer: function (indx) {
     console.log("------下标-----+" + indx)
     var timestamp = util.formatTime(new Date);
     var that = this;
     that.data.pageInix = that.data.pageInix + 1;
     console.log(timestamp)
-    var param = {};
-    // param.showapi_appid = '65900'
-    // param.showapi_sign = '8aebdd532e2c4c5fb868cce039a906f2'
-    // param.showapi_timestamp = timestamp
-
-    // param.showapi_res_gzip = 1
-    // param.page = indx
-    // param.maxResult = 20
-
+    var param = {}
     var urls = 'https://s.budejie.com/topic/list/jingxuan/10/budejie-android-7.0.2/' + this.data.np+'-20.json?market=tencentyingyongbao&udid=352203061660506&appname=baisibudejie&os=4.3&client=android&visiting=&mac=24%3ADB%3AED%3AC0%3A18%3AE3&ver=7.0.2';
     // url: 'https://route.showapi.com/255-1',
     wx.request({

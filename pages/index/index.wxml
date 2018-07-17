@@ -1,3 +1,42 @@
+
+<view>
+<block wx:for="{{listrefresh}}" wx:for-item="item" wx:for-index="idx">
+
+  <view bindtap='itemOnclick' data-id='{{item}}' class="btn-r">
+    <view class='section'>
+      <view class='btn_name_head'>
+        <image lazy-load='false' class='btn_head' src="{{item.u.header[0]}}"></image>
+        
+      </view>
+      <view class='flex-wrp'>
+           <view class="name_h">{{item.u.name}}</view>
+          <view class="name_time">{{item.passtime}}</view>
+        </view>
+    </view>
+    <view class="btn">
+      <view wx:if="{{item.text!=null}}">{{item.text}}
+        <view wx:if="{{item.type=='image'}}">
+          <view class='imbtnn' wx:if="{{item.image.big['0']!=null}}">
+            <image lazy-load='false' class='btnimg' src="{{item.image.big[0]}}" mode="widthFix"></image>
+          </view>
+        </view>
+        <view wx:elif="{{item.type=='gif'}}">
+          <view class='imbtnn' wx:if="{{item.gif.images[0]!=null}}">
+            <image lazy-load='false' class='btnimg' src="{{item.gif.images[0]}}" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</block>
+
+</view>
+<view wx:if="{{isRefrensh==true&&listrefresh.length>4}}">
+<ad  unit-id="adunit-ee77aee21dd53f2a"></ad>
+</view>
+
+<view>
 <block wx:for="{{list}}" wx:for-item="item" wx:for-index="idx">
 <view wx:if="{{(idx+1)%7==0}}">
 <ad  unit-id="adunit-ee77aee21dd53f2a"></ad>
@@ -30,4 +69,7 @@
     </view>
   </view>
 </block>
+
+</view>
+
 <image src='../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image>
