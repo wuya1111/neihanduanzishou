@@ -27,6 +27,6 @@
     <image src='../../images/iv_share_square.png'></image>
   </button>
 </view>
-<image src='../../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image>
+<!-- <image src='../../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image> -->
 
 <image src='../../images/shouye_1.png' bindtap='homeOnclick' class='colortext2'></image>

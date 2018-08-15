@@ -1,40 +1,36 @@
-
- <view class="btn-r">
-    <view class='section'>
-      <view class='btn_name_head'>
-        <image lazy-load='false' class='btn_head' src="{{item.u.header[0]}}"></image>
-        
-      </view>
-      <view class='flex-wrp'>
-           <view class="name_h">{{item.u.name}}</view>
-          <view class="name_time">{{item.passtime}}</view>
-        </view>
-    </view>
-    <view class="btn">
-      <view wx:if="{{item.text!=null}}">{{item.text}}
-        <view wx:if="{{item.type=='image'}}">
-          <view class='imbtnn' wx:if="{{item.image.big['0']!=null}}">
-            <image lazy-load='false' class='btnimg' src="{{item.image.big[0]}}" bindtap='imageOnclick'data-src="{{item.image.big[0]}}"  mode="widthFix"></image>
-          </view>
-        </view>
-        <view wx:elif="{{item.type=='gif'}}">
-          <view class='imbtnn' wx:if="{{item.gif.images[0]!=null}}">
-            <image lazy-load='false' class='btnimg' src="{{item.gif.images[0]}}" bindtap='imageOnclick' data-src="{{item.gif.images[0]}}" mode="widthFix"></image>
-          </view>
-        </view>
-      </view>
+<view class="btn-r">
+  <view class='section'>
+    <view class='btn_name_head'>
+      <image lazy-load='false' class='btn_head' src="{{item.u.header[0]}}"></image>
 
     </view>
-    <ad unit-id="adunit-9997dbff5109743e"></ad>
+    <view class='flex-wrp'>
+      <view class="name_h">{{item.u.name}}</view>
+      <view class="name_time">{{item.passtime}}</view>
+    </view>
+  </view>
+  <view class="btn">
+    <view wx:if="{{item.text!=null}}">{{item.text}}
+      <view wx:if="{{item.type=='image'}}">
+        <view class='imbtnn' wx:if="{{item.image.big['0']!=null}}">
+          <image lazy-load='false' class='btnimg' src="{{item.image.big[0]}}" bindtap='imageOnclick' data-src="{{item.image.big[0]}}" mode="widthFix"></image>
+        </view>
+      </view>
+      <view wx:elif="{{item.type=='gif'}}">
+        <view class='imbtnn' wx:if="{{item.gif.images[0]!=null}}">
+          <image lazy-load='false' class='btnimg' src="{{item.gif.images[0]}}" bindtap='imageOnclick' data-src="{{item.gif.images[0]}}" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+
   </view>
 
-
-
-
+</view>
+<ad unit-id="adunit-9997dbff5109743e"></ad>
 <view class="fx-zx">
   <button open-type='share'>
     <image src='../images/iv_share_square.png'></image>
   </button>
 </view>
-<image src='../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image>
+<!-- <image src='../images/dashang.png' bindtap='dashaOnclick' class='colortext'></image> -->
 <image src='../images/shouye_1.png' bindtap='homeOnclick' class='colortext2'></image>
